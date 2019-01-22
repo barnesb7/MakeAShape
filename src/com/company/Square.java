@@ -22,4 +22,7 @@ public class Square {
         return height * width;
     }
 
+    public String print(){
+        return "A square with a height of " + height + " and a width of " + width + " has an area of " + calculateArea() + ".";
+    }
 }

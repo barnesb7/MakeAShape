@@ -6,43 +6,51 @@ public class ShapeDemo {
 
     public static void main(String[] args) {
 
-     Scanner scanner = new Scanner(System.in);
-     String userInput;
-     double userDoubleInput;
-     boolean shapeIsValid = false;
+
+        Scanner scanner = new Scanner(System.in);
+        String userInput;
+        double userDoubleInput;
+        boolean shapeIsValid = false;
+
+             do{
+                 System.out.println("What shape would you like to create?");
+                 userInput = scanner.next();
+
+                 if(userInput.equals("rectangle") || userInput.equals("triangle") || userInput.equals("square")){
+                     shapeIsValid = true;
+                 }
+
+                if(!shapeIsValid){
+                    System.out.println("Invalid shape. Please choose triangle, square, or rectangle");
+                }
+
+             } while(!shapeIsValid);
 
 
+             if(userInput.equals("rectangle")){
 
-     do{
-         System.out.println("What shape would you like to create?");
-         userInput = scanner.next();
+               Rectangle rectangle = new Rectangle();
 
-         if(userInput.equals("rectangle") || userInput.equals("triangle") || userInput.equals("square")){
-             shapeIsValid = true;
-         }
+                 System.out.println("What is the height of your rectangle(with two decimal places)");
+                 rectangle.setHeight(scanner.nextDouble());
 
-        if(!shapeIsValid){
-            System.out.println("Invalid shape. Please choose triangle, square, or rectangle");
-        }
+                 System.out.println("What is the width of your rectangle (with two decimal places)");
+                 rectangle.setWidth(scanner.nextDouble());
 
-     } while(!shapeIsValid);
+                 System.out.println(rectangle.print());
 
+             } else if(userInput.equals("square")){
 
-     if(userInput.equals("rectangle")){
+                 Square square = new Square();
+                 System.out.println("What is the height and width of your square (with two decimal places)");
+                 square.setHeightAndWidth(scanner.nextDouble());
 
-       Rectangle rectangle = new Rectangle();
-
-       System.out.println("What is the height of your rectagle (with two decimal places)");
-       rectangle.setHeight(scanner.nextDouble());
-
-       System.out.println("What is the width of your rectangle (with two decimal places)");
-       rectangle.setWidth(scanner.nextDouble());
-
-       System.out.println(rectangle.print());
-     }
+                 System.out.println(square.print());
+             }
 
 
 
 
     }
+
 }
