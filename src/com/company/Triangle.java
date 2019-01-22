@@ -26,5 +26,8 @@ public class Triangle {
         return (height * width)/2;
     }
 
+    public String print(){
+        return "A triangle with a height of " + height + " and a width of " + width + " has an area of " + calculateArea() + ".";
+    }
 
 }
