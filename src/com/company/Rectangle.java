@@ -25,4 +25,13 @@ public class Rectangle {
         return width * height;
     }
 
+    public String print(){
+
+        if (width == height){
+           return  "The width and height are even at " + width + ", this shape is a square. Its area is " + calculateArea() + ".";
+        } else {
+            return "A rectangle with a width of " + width + " and a height of " + height + " has an area of " + calculateArea() + ".";
+        }
+    }
+
 }
